@@ -36,3 +36,6 @@ if list(filter(is_palindrome, range(1, 200))) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 11,
 else:
     print('测试失败!')
 # print(is_palindrome(1))
+
+def metric(fn):
+    print()
