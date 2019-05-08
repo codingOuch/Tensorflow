@@ -22,3 +22,23 @@ class Fib(object):
             raise StopIteration()
         return self.a
 
+    def __getitem__(self, item):
+        if isinstance(item, int):
+            a, b = 1, 1
+            for x in range(item):
+                a, b = b, a+b
+            return a
+        if isinstance(item, slice):
+            start = item.start
+            stop = item.stop
+            if start is None:
+                start = 0
+            if stop is None:
+                stop = 20
+            a, b = 1, 1
+            L = []
+            for x in range(stop):
+                if x >= start:
+                    L.append(a)
+                a, b = b, a+b
+            return L
